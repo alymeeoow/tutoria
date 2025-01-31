@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoria - Profile Photo</title>
+  <link rel="stylesheet" href="{% static 'css/user_about_2.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}">
+</head>
+<body>
+
+
+  {% include 'users/header2.html' %}
+
+
+  <div class="page-wrapper">
+    <div class="profile-container">
+        <h2 class="profile-title">Profile photo</h2>
+        <p class="profile-subtext">
+            Choose a photo that will help learners get to know you.
+        </p>
+        <hr class="divider">
+
+        <div class="profile-card">
+            <div class="upload-box" onclick="document.getElementById('profileUpload').click()">
+                <label for="profileUpload" class="upload-placeholder">
+                    JPEG or PNG, max <br> 5MB
+                </label>
+                <input type="file" id="profileUpload" accept="image/jpeg, image/png" onchange="displayImage(event)">
+            </div>
+
+            <div class="profile-info">
+                <h3 class="profile-name">Tracy Anne I. 
+                    <img src="{% static 'images/flag.png' %}" alt="Flag" class="flag-icon">
+                </h3>
+                <p>📚 Teaches English lessons</p>
+                <p>💬 Speaks English (Native)</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+        <button class="upload-btn" onclick="uploadProfilePhoto()">Upload a Photo</button>
+    </div>
+  </div>
+
+  {% include 'modal/warning.html' %}
+
+  <script src="{% static 'js/user_about.js' %}"></script>
+
+
+</body>
+</html>

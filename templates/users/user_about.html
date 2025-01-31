@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Tutoria</title>
+  <link rel="stylesheet" href="{% static 'css/user_about.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}">
+</head>
+<body>
+  {% include 'users/header2.html' %}
+
+  <main class="about-page">
+    <section class="form-container">
+      <h1>About</h1>
+      <p class="description">
+        Start creating your public tutor profile. Your progress will be automatically saved as you complete each section.
+        You can return at any time to finish your registration.
+      </p>
+
+      <div class="form-grid">
+        <!-- Left Section -->
+        <div class="left-section bordered-box">
+          <div class="input-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="First Name">
+          </div>
+
+          <div class="input-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" placeholder="Last Name">
+          </div>
+
+          <div class="input-group">
+            <label for="phone-number">Phone Number</label>
+            <input type="tel" id="phone-number" placeholder="Phone Number">
+          </div>
+        
+
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email">
+          </div>
+          
+
+          <div class="input-group">
+            <label for="subject">Subject you teach</label>
+            <select id="subject">
+              <option value="" disabled selected>Select a subject</option>
+              <option value="math">Math</option>
+              <option value="science">Science</option>
+              <option value="english">English</option>
+            </select>
+          </div>
+        </div>
+
+          
+
+        <!-- Right Section -->
+        <div class="right-section bordered-box">
+         
+
+          <div class="input-group">
+            <div class="upload-section">
+                <div class="upload-box">
+                    <div class="upload-icon">
+                        <img src="{% static 'images/svg/upload.svg' %}" alt="Upload Icon">
+                    </div>
+                    <p>Upload document you want to put in your credential</p>
+                    <input type="file" id="fileUpload" style="display: none;" onchange="startUpload()">
+                    <button id="browseBtn" onclick="document.getElementById('fileUpload').click()">Browse Files</button>
+                </div>
+        
+                <div id="progressContainer" class="progress-container hidden">
+                    <span class="file-badge">DOC</span>
+                    <progress id="uploadProgress" value="0" max="100"></progress>
+                    <span id="progressText" class="progress-text">0%</span>
+                    <button id="cancelButton" class="remove-file" onclick="cancelUpload()">✖</button>
+                </div>
+        
+                <div id="uploadComplete" class="upload-complete hidden">
+                    <span>Upload Complete</span>
+                    <button id="reUploadBtn" onclick="reUpload()">Re-upload</button>
+                </div>
+            </div>
+        </div>
+        
+              
+
+          <div class="form-footer">
+            <div class="checkbox-container">
+              <input type="checkbox" id="age-confirmation">
+              <label class="ageLabel" for="age-confirmation">I confirm I'm over 18 years old</label>
+            </div>
+            <button class="save-button">Save and Continue</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{% static 'js/user_about.js' %}"></script>
+  <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

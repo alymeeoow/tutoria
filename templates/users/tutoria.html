@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoria</title>
+  <link rel="stylesheet" href="{% static 'css/tutoria.css' %}">
+
+  <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+  <!-- Header Section -->
+  {% include 'users/navigation.html' %}
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="intro">
+      <h1 style="color: #76aced;">TUTORIA</h1>
+      <p>
+        We connect children with outstanding online tutors, helping them unlock their full potential. 
+        Our aim is to empower kids through personalized, high-quality education.
+      </p>
+      <div class="action-buttons">
+        <button class="find-tutor">Find a Tutor</button>
+        <button class="become-tutor">Become a Tutor</button>
+      </div>
+    </section>
+    <div class="image-section" style="border: 5px #78a6dd;">
+      <img  style="  border: 5px solid #78a6dd;" src="{% static 'images/blue.png' %}" alt="Student studying online" class="student-image">
+      <div class="circle-decor"></div>
+    </div>
+  </main>
+
+
+  <script src="{% static 'js/index.js' %}"></script>
+
+
+  </script>
+</body>
+</html>

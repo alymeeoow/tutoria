@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Tutor - Tutoria</title>
+  <link rel="stylesheet" href="{% static 'css/find_tutor.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+ 
+  {% include 'users/navigation.html' %}
+<main class="find-tutor">
+  <section class="search-bar">
+    <div class="search-input">
+      <i class="search-icon">🔍</i>
+      <input  type="text" placeholder="Search for an English Tutor" />
+    </div>
+    <div class="filter" style="display: none;">
+      <label for="location">LOCATION</label>
+      <select id="location">
+        <option value="all">All Locations</option>
+        <option value="online">Online</option>
+        <option value="nearby">Nearby</option>
+      </select>
+    </div>
+  </section>
+
+
+
+  <section class="recommendations">
+    <p><i class="pin-icon">📍</i> Below is a list of recommended tutors based on your data.</p>
+
+    <!-- Tutor Card 1 -->
+
+    <div class="tutor-card-container">
+    <div class="tutor-card">
+      <div class="tutor-info">
+        <img src="{% static 'images/jdpixel.jpeg' %}" alt="Tutor Photo" class="tutor-photo">
+        <div class="tutor-details">
+          <h3>TEACHES: Language, Vocabulary, Phonics and Word Recognition, <a href="#">10+ more</a></h3>
+          <p>JD so PoGi</p>
+          <p>Goal-oriented and success guarantee</p>
+          <p>⭐ 5.0 (40+ reviews)</p>
+          <p>📱 Tutoring Online and Face-to-Face</p>
+          <p>📞 GCash: 09993112223</p>
+        </div>
+      </div>
+      <div class="pricing">
+        <p>₱500 /per hour</p>
+        <button>Schedule Tutor</button>
+      </div>
+    </div>
+
+    <!-- Tutor Card 2 -->
+    <div class="tutor-card">
+      <div class="tutor-info">
+        <img src="{% static 'images/arp.jpg' %}" alt="Tutor Photo" class="tutor-photo">
+        <div class="tutor-details">
+          <h3>TEACHES: Math, Science, Critical Thinking, <a href="#">5+ more</a></h3>
+          <p>Arp V</p>
+          <p>Patient and effective teaching style</p>
+          <p>⭐ 4.8 (25+ reviews)</p>
+          <p>📱 Online Tutoring Only</p>
+          <p>📞 PayPal/GCash</p>
+        </div>
+      </div>
+      <div class="pricing">
+        <p>₱700 /per hour</p>
+        <button>Schedule Tutor</button>
+      </div>
+    </div>
+</div>
+  </section>
+
+
+</main>
+
+<script src="{% static 'js/hamburger.js' %}"></script>
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/tutoria.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+<header style="background-color: #76aced;">
+    
+    <div class="logo">
+        <a href="{% url 'index' %}">
+      <img src="{% static 'images/owl.png' %}" alt="Tutoria Logo">
+      <span style="font-weight: bold;">Tutoria</span>
+    </a>
+    </div>
+    <nav class="nav">
+        <a href="{% url 'find_tutor' %}">Find a Tutor</a>
+        <a href="">Become a Tutor</a>
+        <a href="{% url 'subjects' %}">Subjects</a>
+        <!-- Add the icons here -->
+        <a href="{% url 'user_chat' %}" class="icon"><i class="fa fa-envelope"></i></a>
+        <div class="notification-container" style="position: relative;">
+            <a href="javascript:void(0)" class="icon" onclick="toggleNotificationDropdown()">
+                <i class="fa fa-bell"></i><span class="notification-count">1</span>
+            </a>
+            <div class="dropdown-menu" id="notificationDropdown" style="display: none; position: absolute; top: 40px; right: 0; background: #f9f3ff; border: 1px solid #ddd; border-radius: 5px; width: 200px; z-index: 100;">
+                <div class="notification-item">
+                    <i class="fa fa-bell"></i>
+                    <span>position: absolute;
+                        top: 35px; 
+                        left: 50%;
+                        transform: translateX(-50%); 
+                        background: #f9f3ff;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        z-index: 100; 
+                        width: 200px
+                        display: none; </span>
+                </div>
+                <div class="notification-item">
+                    <i class="fa fa-bell"></i>
+                    <span>Notification 2</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-icon-container" style="margin-left: -7px;">
+            <a href="javascript:void(0)" class="icon profile-icon" onclick="toggleDropdownNav()">
+                <img src="{% static 'images/jdpixel.jpeg' %}" alt="Profile">
+            </a>
+            <div class="dropdown-menu" id="dropdownMenuNav">
+                <a href="">Profile</a>
+                <a href="">Settings</a>
+                <a href="">Log out</a>
+            </div>
+        </div>
+    </nav>
+    
+      
+    <div class="auth-buttons">
+        <div class="logged-in-icons">
+          <a href="{% url 'user_chat' %}" class="icon">
+            <i class="fa fa-envelope"></i> 
+          </a>
+         
+        </div>
+  
+        <a href="javascript:void(0)"  class="icon notification-container" onclick="toggleNotificationDrop()">
+            <i class="fa fa-bell" ></i>
+            <div class="dropdown-menu notification-dropdown"   id="notificationDropdown1">
+                <div class="notification-item">
+                    <i class="fa fa-bell"></i> position: absolute;
+                    top: 35px; /* Adjust this value to control vertical spacing below the bell icon */
+                    left: 50%; /* Position relative to the center of the container */
+                    transform: translateX(-50%); /* Center the dropdown horizontally */
+                    background: #f9f3ff;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    z-index: 100; /* Ensure the dropdown appears above other elements */
+                    width: 200px; /* Adjust the width of the dropdown */
+                    display: none; /* Hide dropdown by default */
+                </div>
+                <div class="notification-item">
+                    <i class="fa fa-bell"></i> Notification 2
+                </div>
+                <div class="notification-item">
+                    <i class="fa fa-bell"></i> Notification 3
+                </div>
+                <div class="notification-item">
+                    <i class="fa fa-bell"></i> Notification 4
+                </div>
+            </div>
+        </a>
+      
+        
+ 
+        
+        <div class="profile-dropdown">
+            <a href="javascript:void(0)" class="icon profile-icon" onclick="toggleDropdown()">
+                <img src="{% static 'images/jdpixel.jpeg' %}" alt="Profile"> 
+            </a>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="">Profile</a>
+                <a href="">Settings</a>
+                <a href="">Log out</a>
+            </div>
+        </div>
+    </div>
+      
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</header>
+
+
+
+<script src="{% static 'js/tutoria.js' %}"></script>

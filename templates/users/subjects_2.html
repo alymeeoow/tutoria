@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects - Tutoria</title>
+  <link rel="stylesheet" href="{% static 'css/subject_2.css' %}">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+</head>
+
+<body>
+  {% include 'users/navigation.html' %}
+
+  <main class="subjects-page">
+    <section class="search-bar">
+      <div class="search-input">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search for Subjects" />
+      </div>
+    </section>
+
+    <section class="language-filter">
+        <button  class="language-btn">
+          <img src="{% static 'images/svg/language.svg' %}" alt="Language Icon" class="language-icon">
+          English
+        </button>
+      </section>
+      
+
+    <section class="subject-list">
+      <div class="subject-item">
+        <img src="{% static 'images/svg/book.svg' %}" alt="Award Icon" class="subject-icon">
+        <div class="subject-info">
+          <h3>Phonics and Word Recognition:</h3>
+          <p>Focuses on teaching students the relationships between letters and sounds. Helps them decode words and recognize common spelling patterns.</p>
+        </div>
+        <button class="find-tutor-btn">Find Tutor</button>
+      </div>
+
+      <div class="subject-item">
+        <img src="{% static 'images/svg/book.svg' %}" alt="Award Icon" class="subject-icon">
+        <div class="subject-info">
+          <h3>Vocabulary Development:</h3>
+          <p>Involves expanding students' word knowledge through direct instruction and exposure to new words in various contexts. Encourages the use of a broader range of words in speaking and writing.</p>
+        </div>
+        <button class="find-tutor-btn">Find Tutor</button>
+      </div>
+
+      <div class="subject-item">
+        <img src="{% static 'images/svg/book.svg' %}" alt="Award Icon" class="subject-icon">
+        <div class="subject-info">
+          <h3>Vocabulary Development:</h3>
+          <p>Involves expanding students' word knowledge through direct instruction and exposure to new words in various contexts. Encourages the use of a broader range of words in speaking and writing.</p>
+        </div>
+        <button class="find-tutor-btn">Find Tutor</button>
+      </div>
+
+      <div class="subject-item">
+        <img src="{% static 'images/svg/book.svg' %}" alt="Award Icon" class="subject-icon">
+        <div class="subject-info">
+          <h3>Phonics and Word Recognition:</h3>
+          <p>Focuses on teaching students the relationships between letters and sounds. Helps them decode words and recognize common spelling patterns.</p>
+        </div>
+        <button class="find-tutor-btn">Find Tutor</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="{% static 'js/subjects.js' %}"></script>
+  <script src="{% static 'js/hamburger.js' %}"></script>
+</body>
+</html>

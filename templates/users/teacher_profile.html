@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor-Profile</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_profile.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}"/>
+  </head>
+
+  {% include 'users/navigation.html' %}
+  <body>
+    <div class="profile-container">
+        <div class="profile-left">
+            <h2 class="profile-title">Tutor Profile</h2>
+            <div class="profile-image">
+              <img src="{% static 'images/jdpixel.jpeg' %}" alt="Tutor Profile" />
+            </div>
+            <p><strong>Name:</strong> AlyMeeow</p>
+            <p><strong>Email:</strong> jdpogi@gmail.com</p>
+            <p class="profile-desc">
+              Dedicated and experienced tutor passionate about helping students
+              excel academically and achieve their learning goals.
+            </p>
+        
+            <hr class="profile-divider">
+        
+            <div class="profile-buttons">
+              <button class="message-btn">Message Tutor</button>
+              <button class="schedule-btn">Schedule Tutor</button>
+            </div>
+        </div>
+        
+
+      <div class="profile-right">
+        <div class="teaching-info">
+          <p>
+            <strong>TEACHES:</strong> Language, Vocabulary, Phonics, and word
+            recognition, <a href="#">10+more</a>
+          </p>
+          <p>
+            <strong>
+                <img src="{% static 'images/svg/star.svg' %}" alt="Filled Star" width="24" height="24">
+                <img src="{% static 'images/svg/star.svg' %}" alt="Filled Star" width="24" height="24">
+                <img src="{% static 'images/svg/star.svg' %}" alt="Filled Star" width="24" height="24">
+                <img src="{% static 'images/svg/star.svg' %}" alt="Filled Star" width="24" height="24">
+                <img src="{% static 'images/svg/star.svg' %}" alt="Hollow Star" width="24" height="24">
+                Overall Rating:
+            </strong> 
+            4.0 <span>(487)</span>
+        </p>
+        
+          <ul class="profile-info-grid">
+            <li>
+                <img src="{% static 'images/svg/location.svg' %}" alt="Location Icon">
+                Tutoring Online and Face-to-Face
+            </li>
+            <li>
+                <img src="{% static 'images/svg/grad.svg' %}" alt="Degree Icon">
+                Degree educated
+            </li>
+            <li>
+                <img src="{% static 'images/svg/calendar.svg' %}" alt="Calendar Icon">
+                Mon, Thur, Fri
+            </li>
+            <li>
+                <img src="{% static 'images/svg/phone.svg' %}" alt="Phone Icon">
+                09991112223
+            </li>
+            <li>
+                <img src="{% static 'images/svg/cash.svg' %}" alt="Gcash Icon">
+                GCASH: 09991112223
+            </li>
+            <li>
+                <img src="{% static 'images/svg/chart.svg' %}" alt="Rating Icon">
+                12 year experience
+            </li>
+        </ul>
+        
+            
+            
+
+        <div class="expertise">
+          <h3>Subject Expertise and Ratings</h3>
+          <div class="progress-bar">
+            <span>English - P500/per hour</span>
+            <div class="progress">
+              <div class="fill" style="width: 100%"></div>
+            </div>
+            <span>100%</span>
+          </div>
+          <div class="progress-bar">
+            <span>Mathematics - P600/per hour</span>
+            <div class="progress">
+              <div class="fill" style="width: 80%"></div>
+            </div>
+            <span>80%</span>
+          </div>
+         
+
+          
+          <div class="progress-bar">
+            <span>Mother Tongue - P650/per hour</span>
+            <div class="progress">
+              <div class="fill" style="width: 50%"></div>
+            </div>
+            <span>50%</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
+</html>
