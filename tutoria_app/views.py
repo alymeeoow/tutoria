@@ -70,10 +70,21 @@ def teacher_profile(request):
     return render(request, 'users/teacher_profile.html')
 
 
-def profile(request):
+def teacher_profile_2(request):
   
-    return render(request, 'users/profile.html')
+    return render(request, 'users/teacher_profile_2.html')
 
+
+
+def parent_profile(request):
+  
+    return render(request, 'users/parent_profile.html')
+
+
+
+def student_profile(request):
+  
+    return render(request, 'users/student_profile.html')
 
 
 

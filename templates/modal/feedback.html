@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/feedback_modal.css' %}">
+
+<div id="feedback-modal" class="feedback-modal">
+    <div class="feedback-modal-content">
+      <h2>Give Feedback</h2>
+      <p>How would you describe your experience with your tutor?</p>
+  
+
+      <div class="star-rating">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+  
+  
+      <div class="rating-labels">
+        <span>Terrible</span>
+        <span>Bad</span>
+        <span>Okay</span>
+        <span>Good</span>
+        <span>Amazing</span>
+      </div>
+ 
+      <textarea id="feedback-comment" placeholder="What are the main reasons for your rating?"></textarea>
+  
+   
+      <div class="feedback-modal-buttons">
+        <button class="feedback-buttons" id="submit-feedback">SUBMIT</button>
+        <button  class="feedback-buttons" id="cancel-feedback">CANCEL</button>
+      </div>
+    </div>
+  </div>
+  

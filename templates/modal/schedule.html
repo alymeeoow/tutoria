@@ -1,0 +1,47 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/schedule_modal.css' %}" />
+
+<div class="modal-container" id="scheduleModal" style="display: none">
+  <div class="modal">
+    <button class="close-btn" id="closeModal">&times;</button>
+    <h2>Operational Hours</h2>
+    <label>Schedule Name</label>
+    <input type="text" value="WORKING" />
+
+    <div class="date-time-container">
+      <div>
+        <label>Start Date</label>
+        <input type="date" id="startDate" />
+      </div>
+      <div>
+        <label>End Date</label>
+        <input type="date" id="endDate" />
+      </div>
+    </div>
+
+    <div class="time-container">
+      <div>
+        <label>Start Time</label>
+        <input type="time" />
+      </div>
+      <div>
+        <label>End Time</label>
+        <input type="time" />
+      </div>
+    </div>
+
+    <label>Repeat on</label>
+    <div class="day-buttons">
+      <button>Monday</button>
+      <button>Tuesday</button>
+      <button>Wednesday</button>
+      <button>Thursday</button>
+      <button>Friday</button>
+      <button>Saturday</button>
+      <button>Sunday</button>
+    </div>
+
+    <button class="save-btn">Save</button>
+  </div>
+</div>

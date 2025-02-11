@@ -81,13 +81,13 @@ function displayImage(event) {
         
         if (!validExtensions.includes(file.type) || !['jpg', 'jpeg', 'png'].includes(fileExtension)) {
             showWarningModal("Invalid file type. Please upload a JPEG or PNG image.");
-            event.target.value = "";  // Clear file input
+            event.target.value = ""; 
             return;
         }
 
         if (file.size > 5 * 1024 * 1024) {
             showWarningModal("File size exceeds 5MB limit.");
-            event.target.value = "";  // Clear file input
+            event.target.value = ""; 
             return;
         }
 

@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
  
   
 }
@@ -243,7 +244,7 @@ header {
 
 .btn-primary {
     display: block;
-    width: calc(100% - 20px); 
+    width: calc(101% - 0px); 
     margin: 0 auto; 
     background: #2575fc;
     color: #fff;

@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Profile</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_profile_2.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}" />
+  </head>
+
+  {% include 'users/navigation.html' %}
+  <body>
+    <div class="tutor-profile-container">
+      <div class="tutor-left">
+        <h2 class="tutor-heading">Tutor Profile</h2>
+        <div class="tutor-image">
+          <img src="{% static 'images/jdpixel.jpeg' %}" alt="Tutor Profile" />
+        </div>
+        <p><strong>Name:</strong> Samantha Jane Vargaz</p>
+        <p><strong>Email:</strong> Sam134@gmail.com</p>
+        <p class="tutor-description">
+          Dedicated and experienced tutor passionate about helping students
+          excel academically and achieve their learning goals.
+        </p>
+
+        <hr class="tutor-divider" />
+
+        <div class="tutor-buttons">
+          <button class="message-btn">Message </button>
+          <button  class="schedule-btn">Schedule </button>
+          <button onclick="back()" class="back-btn">Back </button>
+        </div>
+      </div>
+
+      <div class="tutor-right">
+        <div class="tutor-credentials">
+          <h3>Credentials</h3>
+          <div class="credentials-section">
+            <div class="credential-item">
+              <span class="credential-text">Bachelor’s degree in Mathematics</span>
+              <a href="#" class="credential-attachment">see attachment</a>
+            </div>
+            <div class="credential-item">
+              <span class="credential-text">PhD in Physics</span>
+              <a href="#" class="credential-attachment">see attachment</a>
+            </div>
+            <div class="credential-item">
+              <span class="credential-text">Certification in STEM Teaching</span>
+              <a href="#" class="credential-attachment">see attachment</a>
+            </div>
+            <div class="credential-item">
+                <span class="credential-text">Bachelor’s degree in Mathematics</span>
+                <a href="#" class="credential-attachment">see attachment</a>
+              </div>
+              <div class="credential-item">
+                <span class="credential-text">Bachelor’s degree in Mathematics</span>
+                <a href="#" class="credential-attachment">see attachment</a>
+              </div>
+              <div class="credential-item">
+                <span class="credential-text">Bachelor’s degree in Mathematics</span>
+                <a href="#" class="credential-attachment">see attachment</a>
+              </div>
+              <div class="credential-item">
+                <span class="credential-text">Bachelor’s degree in Mathematics</span>
+                <a href="#" class="credential-attachment">see attachment</a>
+              </div>
+              <div class="credential-item">
+                <span class="credential-text">Bachelor’s degree in Mathematics</span>
+                <a href="#" class="credential-attachment">see attachment</a>
+              </div>
+              <div class="credential-item">
+                <span class="credential-text">Bachelor’s degree in Mathematics</span>
+                <a href="#" class="credential-attachment">see attachment</a>
+              </div>
+              <div class="credential-item">
+                <span class="credential-text">Bachelor’s degree in Mathematics</span>
+                <a href="#" class="credential-attachment">see attachment</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="feedback-section">
+          <h3 class="feedback-title">Feedbacks</h3>
+          <div class="feedback-item">
+            <strong>Raiza Mae ★★★★★</strong>
+            <p>She really able to teach my son well</p>
+          </div>
+          <div class="feedback-item">
+            <strong>Account Name ★★★★☆</strong>
+            <p>comment</p>
+          </div>
+          <button class="feedback-btn">Give Feedback</button>
+        </div>
+      </div>
+    </div>
+
+    {% include 'modal/schedule.html' %}
+    {% include 'modal/feedback.html' %}
+
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/schedule.js' %}"></script>
+
+    <script src="{% static 'js/feedback.js' %}"></script>
+
+    <script>
+       var teacherProfile2URL = "{% url 'teacher_profile_2' %}";
+    var teacherProfileURL = "{% url 'teacher_profile' %}";
+    </script>
+
+  
+  </body>
+</html>

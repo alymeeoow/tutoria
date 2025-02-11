@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{% static 'css/student_profile.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}" />
+  </head>
+
+  {% include 'users/navigation.html' %}
+  <body>
+    <div class="student-profile-container">
+      <div class="student-left">
+        <h2 class="student-heading">Student Profile</h2>
+        <div class="student-image1">
+          <img src="{% static 'images/jdpixel.jpeg' %}" alt="Student Profile" />
+        </div>
+        <p class="student-name">COLE, ANNA S.</p>
+        <p class="student-email">annacole@gmail.com</p>
+        <p class="student-info">Grade Level: Grade 5</p>
+        <p class="student-info">Gender: Female</p>
+        <p class="student-info">Birthday: July 19, 2014</p>
+        <p class="student-info">Guiwan, Zamboanga City</p>
+      </div>
+
+      <div class="student-right">
+        <div class="subject-tutor-section">
+          <h3 class="section-title-top">Subject And Tutor</h3>
+          <div class="subject-list">
+            <div class="subject-item">ENGLISH <span>Tutor: <a href="#">Jane Vargas</a></span></div>
+            <div class="subject-item">MATH <span>Tutor: <a href="#">Jane Vargas</a></span></div>
+            <div class="subject-item">SCIENCE <span>Tutor: <a href="#">Nicole Joy</a></span></div>
+            <div class="subject-item">FILIPINO <span>Tutor: <a href="#">Coco Martin</a></span></div>
+          </div>
+        </div>
+
+        <div class="schedule-section">
+          <h3 class="section-title-bottom">Schedule</h3>
+          <table class="schedule-table">
+            <tr>
+              <th>SUBJECT</th>
+              <th>TIME</th>
+              <th>DAY</th>
+            </tr>
+            <tr>
+              <td>MATH</td>
+              <td>9AM-10AM</td>
+              <td>M,W,F</td>
+            </tr>
+            <tr>
+              <td>ENGLISH</td>
+              <td>3PM-PM</td>
+              <td>T,TH,S</td>
+            </tr>
+            <tr>
+              <td>FILIPINO</td>
+              <td>AM-10AM</td>
+              <td>T,W,F</td>
+            </tr>
+            <tr>
+              <td>SCIENCE</td>
+              <td>10AM-11AM</td>
+              <td>M,W,F</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    {% include 'modal/feedback.html' %}
+
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/feedback.js' %}"></script>
+  </body>
+</html>

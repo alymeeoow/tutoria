@@ -53,10 +53,11 @@ header {
 }
 
 .nav a:hover {
-    background-color: #4A90E2;
-    color: #FFFFFF;                                                             
-    transition: 0.3s ease-in-out;
-    border-radius: 5px;
+
+    border-bottom: 2px solid black;
+ 
+                                                            
+  
 }
 
 .hamburger-menu {
@@ -253,21 +254,26 @@ header {
         font-weight: bold;
         color: black;
         transition: background-color 0.3s ease, color 0.3s ease;
-        border-bottom: 1px solid #ddd;
+       
     }
     
     .dropdown-menu a:last-child {
-        border-bottom: none; 
+        border-bottom: 1px solid #ddd;
     }
     
     .dropdown-menu a:hover {
-        background-color: #4A90E2;
-        color: #FFFFFF;
+      
+         border-bottom: 2px solid black;
         transition: 0.3s ease-in-out;
        
-        color: #fff;
+     
         transform: scale(1.05);
     opacity: 0.9;
+    }
+
+
+    .logout:hover{
+         border-bottom: 2px solid black !important;
     }
 
     .profile-icon-container {

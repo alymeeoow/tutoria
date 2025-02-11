@@ -54,7 +54,7 @@
     color: red;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .modal-content {
         width: 90%;

@@ -10,8 +10,11 @@
     <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}"/>
   </head>
 
+ 
+
   {% include 'users/navigation.html' %}
   <body>
+
     <div class="profile-container">
         <div class="profile-left">
             <h2 class="profile-title">Tutor Profile</h2>
@@ -28,15 +31,22 @@
             <hr class="profile-divider">
         
             <div class="profile-buttons">
-              <button class="message-btn">Message Tutor</button>
-              <button class="schedule-btn">Schedule Tutor</button>
+              <button class="message-btn">Message </button>
+              <button class="schedule-btn">Schedule </button>
+              <button onclick="redirect()" class="next-btn">Next </button>
+        
             </div>
         </div>
         
 
       <div class="profile-right">
+
+      
+
+     
+
         <div class="teaching-info">
-          <p>
+          <p> 
             <strong>TEACHES:</strong> Language, Vocabulary, Phonics, and word
             recognition, <a href="#">10+more</a>
           </p>
@@ -98,6 +108,8 @@
             </div>
             <span>80%</span>
           </div>
+
+       
          
 
           
@@ -110,9 +122,33 @@
             
           </div>
         </div>
+
+        
+        {% include 'modal/schedule.html' %}
+        
+      
       </div>
+
+      
+      
     </div>
 
+    <script>
+       var teacherProfile2URL = "{% url 'teacher_profile_2' %}";
+    var teacherProfileURL = "{% url 'teacher_profile' %}";
+    </script>
+
+    
+
+    
     <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/schedule.js' %}"></script>
+
+ 
+
+  
+    
+    
+   
   </body>
 </html>
