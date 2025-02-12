@@ -1,4 +1,4 @@
-/* General Styles */
+
 
 
 body {
@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
  
   
 }
@@ -80,6 +81,8 @@ header {
 .auth-buttons {
     display: flex;
 }
+
+
 
 .auth-buttons button {
     margin: 0 5px;

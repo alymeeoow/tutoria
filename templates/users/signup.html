@@ -6,97 +6,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create an Account - Tutoria</title>
   <link rel="stylesheet" href="{% static 'css/signup.css' %}">
-
-
+  <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}" />
 </head>
 <body>
 
   {% include 'users/header.html' %}
 
-<main class="create-account">
-  <div class="signup-container">
-    <div class="signup-welcome">
-      <h2>Welcome to <span class="brand-name">Tutoria</span></h2>
-      <p>Connecting you with the perfect tutor to achieve your learning goals.</p>
-      <img src="{% static 'images/owl.png' %}" alt="Welcome to Tutoria" class="owl-icon">
-   
+  <main class="create-account">
+    <div class="signup-container">
+      <div class="signup-welcome">
+        <h2>Welcome to <span class="brand-name">Tutoria</span></h2>
+        <p>Connecting you with the perfect tutor to achieve your learning goals.</p>
+        <img src="{% static 'images/owl.png' %}" alt="Welcome to Tutoria" class="owl-icon">
+      </div>
+      
+      <div class="signup-form">
+        <h3>Create an account</h3>
+        <p>To get started, you'll need an account.</p>
+
+       
+
+        <form action="{% url 'signup' %}" method="post">
+          {% csrf_token %}
+
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" value="{{ form.first_name.value|default_if_none:'' }}" required>
+
+          <label for="middle_name">Middle Name</label>
+          <input type="text" id="middle_name" name="middle_name" value="{{ form.middle_name.value|default_if_none:'' }}">
+
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value|default_if_none:'' }}" required>
+
+          <label for="email">Username</label>
+          <input type="text" id="username" name="username" value="{{ form.username.value|default_if_none:'' }}" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" value="{{ form.email.value|default_if_none:'' }}" required>
+
+
+          <label for="address">Home Address</label>
+          <input type="text" id="address" name="address" value="{{ form.address.value|default_if_none:'' }}" required>
+
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled {% if not form.gender.value %}selected{% endif %}>Select Gender</option>
+            <option value="male" {% if form.gender.value == 'male' %}selected{% endif %}>Male</option>
+            <option value="female" {% if form.gender.value == 'female' %}selected{% endif %}>Female</option>
+            <option value="other" {% if form.gender.value == 'other' %}selected{% endif %}>Other</option>
+          </select>
+
+          <label for="password1">Password</label>
+          <input type="password" id="password1" name="password1" required>
+
+          <label for="password2">Re-enter Password</label>
+          <input type="password" id="password2" name="password2" required>
+
+          <p>Choose Role:</p>
+          <div class="role-options">
+            <label>
+              <input type="radio" name="role" value="parent" {% if form.role.value == 'parent' %}checked{% endif %} required>
+              Parent/Guardian
+            </label>
+            <label>
+              <input type="radio" name="role" value="tutor" {% if form.role.value == 'tutor' %}checked{% endif %} required>
+              Tutor
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary">SUBMIT</button>
+        </form>
+
+      </div>
     </div>
-    <div class="signup-form">
-      <h3>Create an account</h3>
-      <p>To get started, you'll need an account.</p>
-      <form action="{% url 'signup' %}" method="post">
-        {% csrf_token %}
-        <label for="last_name">Last Name</label>
-        <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
-        
-        <label for="first_name">First Name</label>
-        <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-        
-        <label for="middle_name">Middle Name</label>
-        <input type="text" id="middle_name" name="middle_name" placeholder="Middle Name">
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <label for="address">Home Address</label>
-        <input type="email" id="address" name="address" placeholder="Address" required>
-        <label for="gender">Gender</label>
-        <select id="gender" name="gender" required>
-          <option value="" disabled selected>Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-        
-        
-        
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Password" required>
-        
-        <label for="re_password">Re-enter Password</label>
-        <input type="password" id="re_password" name="re_password" placeholder="Re-enter Password" required>
-        
-        <p>Choose Role:</p>
-        <div class="role-options">
-          <label>
-            <input type="radio" name="role" value="parent" required>
-            Parent/Guardian
-          </label>
-          <label>
-            <input type="radio" name="role" value="tutor" required>
-            Tutor
-          </label>
-        </div>
-        
-        <button type="submit" class="btn-primary">SUBMIT</button>
-      </form>
- 
-    </div>
-  </div>
-</main>
-
-<script src="{% static 'js/index.js' %}"></script>
+  </main>
 
 
+  {% include 'modal/success.html' %}
+  {% include 'modal/error.html' %}
+
+
+  
+
+  <script src="{% static 'js/index.js' %}"></script>
+
+  <script>
+    function signin() {
+      window.location.href = "{% url 'signin' %}"
+    }
+
+    function signup() {
+      window.location.href = "{% url 'signup' %}"
+    }
+    
+  </script>
+
+
+{% if success %}
 <script>
-
-   function signin(){
-
-window.location.href = "{% url 'signin' %}"
-
-
-}
-
-
-function signup(){
-
-window.location.href = "{% url 'signup' %}"
-
-
-}
+  showModal("{{ modal_title }}", "{{ modal_message }}");
 </script>
+{% endif %}
 
-
-
+{% if error %}
+<script>
+  showErrorModal("{{ error_title }}", "{{ error_message }}");
 </script>
+{% endif %}
+
 </body>
 </html>

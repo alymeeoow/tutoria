@@ -36,5 +36,6 @@ urlpatterns = [
     path('teacher_profile_2', views.teacher_profile_2,name ="teacher_profile_2"),
     path('parent_profile', views.parent_profile ,name ="parent_profile"),
     path('student_profile', views.student_profile ,name ="student_profile"),
+  path('profile', views.profile ,name ="profile"),
     
 ]

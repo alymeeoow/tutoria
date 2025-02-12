@@ -13,9 +13,10 @@
     </a>
     </div>
     <nav class="nav">
-        <a href="{% url 'find_tutor' %}">Find a Tutor</a>
-        <a href="">Become a Tutor</a>
-        <a href="{% url 'subjects' %}">Subjects</a>
+        <a href="{% url 'find_tutor' %}" class="{% if request.resolver_match.url_name == 'find_tutor' %}active{% endif %}">Find a Tutor</a>
+        <a href="" class="{% if request.resolver_match.url_name == 'become_tutor' %}active{% endif %}">Become a Tutor</a>
+        <a href="{% url 'subjects' %}" class="{% if request.resolver_match.url_name == 'subjects' %}active{% endif %}">Subjects</a>
+        
         <!-- Add the icons here -->
         <a href="{% url 'user_chat' %}" class="icon"><i class="fa fa-envelope"></i></a>
         <div class="notification-container" style="position: relative;">
@@ -49,7 +50,7 @@
                 <img src="{% static 'images/jdpixel.jpeg' %}" alt="Profile">
             </a>
             <div class="dropdown-menu" id="dropdownMenuNav">
-                <a href="">Profile</a>
+                <a href="{% url 'profile' %}">Profile</a>
                 <a href="">Settings</a>
                 <a class="logout" style=" border-bottom: 1px solid #ddd;" href="">Log out</a>
             </div>
@@ -101,7 +102,7 @@
                 <img src="{% static 'images/jdpixel.jpeg' %}" alt="Profile"> 
             </a>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="">Profile</a>
+                <a href="{% url 'profile' %}">Profile</a>
                 <a href="">Settings</a>
                 <a class="logout" style=" border-bottom: 1px solid #ddd;" href="">Log out</a>
             </div>

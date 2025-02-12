@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Profile - Tutoria</title>
+  <link rel="stylesheet" href="{% static 'css/parent_profile.css' %}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  {% include 'users/navigation.html' %}
+
+  <main class="profile-container">
+    <div class="profile-wrapper">
+
+     
+      <div class="parent-profile">
+        <h2>Parent Profile</h2>
+        <div class="profile-card">
+          <img src="{% static 'images/maiko.jfif' %}" alt="Parent Photo" class="parent-photo">
+          <p><strong>Name:</strong> Sasha Mia Mendoza</p>
+          <p><strong>Email:</strong> sashamaria@gmail.com</p>
+          <p><strong>Telephone:</strong> 09696969699</p>
+        </div>
+      </div>
+
+    
+      <div class="student-section">
+        <button class="register-btn">REGISTER A STUDENT</button>
+        <h2>REGISTERED STUDENT</h2>
+
+        <div class="student-list">
+          <div class="student-card">
+            <img src="{% static 'images/jdpixel.jpeg' %}" alt="Student" class="student-photo">
+            <div class="student-info">
+              <h3>COLE, ANNA S.</h3>
+              <p>annacole@gmail.com</p>
+              <p>09178393528</p>
+            </div>
+            <button class="view-btn">VIEW STUDENT</button>
+          </div>
+
+          <div class="student-card">
+            <img src="{% static 'images/jdpixel.jpeg' %}" alt="Student" class="student-photo">
+            <div class="student-info">
+              <h3>COLE, ANNA S.</h3>
+              <p>annacole@gmail.com</p>
+            </div>
+            <button class="view-btn">VIEW STUDENT</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="{% static 'js/hamburger.js' %}"></script>
+</body>
+</html>

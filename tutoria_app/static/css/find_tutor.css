@@ -52,14 +52,7 @@ header {
 
 
 
-.nav a.active {
-    color: black;
-    background-color: #afa1aa; 
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 10px 15px; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-}
+
 
 .hamburger-menu {
     display: none;

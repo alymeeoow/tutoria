@@ -1,63 +1,103 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parent Profile - Tutoria</title>
-  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-  <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
-  {% include 'users/navigation.html' %}
-
-  <main class="profile-container">
-    <div class="profile-wrapper">
-
-      <!-- Left Side - Parent Profile -->
-      <div class="parent-profile">
-        <h2>Parent Profile</h2>
-        <div class="profile-card">
-          <img src="{% static 'images/jdpixel.jpeg' %}" alt="Parent Photo" class="parent-photo">
-          <p><strong>Name:</strong> Maria Santiago</p>
-          <p><strong>Email:</strong> Maria134@gmail.com</p>
-          <p><strong>Telephone:</strong> 1234545453</p>
-        </div>
-      </div>
-
-      <!-- Right Side - Student List -->
-      <div class="student-section">
-        <button class="register-btn">REGISTER A STUDENT</button>
-        <h2>REGISTERED STUDENT</h2>
-
-        <div class="student-list">
-          <div class="student-card">
-            <img src="{% static 'images/jdpixel.jpeg' %}" alt="Student" class="student-photo">
-            <div class="student-info">
-              <h3>COLE, ANNA S.</h3>
-              <p>annacole@gmail.com</p>
-              <p>09178393528</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+  </head>
+  <body>
+    {% include 'users/navigation.html' %}
+    <div class="profile-container">
+        <h2 class="profile-title">PROFILE</h2>
+        <div class="profile-content">
+            <div class="profile-left">
+                <button class="edit-information">Edit Information</button>
+                <div class="profile-card">
+               
+                    <h3>TEACHES: Language, Vocabulary, Phonics and more</h3>
+                    <p>Overall Rating: <span class="rating">★★★★★ 5.0</span></p>
+                    <ul>
+                        <li>Tutoring Online and Face-to-Face</li>
+                        <li>12 years experience</li>
+                        <li>Degree educated</li>
+                        <li>GCASH: 09991112223</li>
+                        <li>Mon, Thur, Fri</li>
+                    </ul>
+                </div>
+    
+                <div class="credentials">
+                 
+                    <h3>Credentials</h3>
+                    <ul>
+                        <li>Bachelor’s degree in Mathematics</li>
+                        <li>PhD in Physics for advanced physics tutoring</li>
+                        <li>Certification in Teaching STEM Subjects</li>
+                    </ul>
+                </div>
             </div>
-            <button class="view-btn">VIEW STUDENT</button>
-          </div>
-
-          <div class="student-card">
-            <img src="{% static 'images/jdpixel.jpeg' %}" alt="Student" class="student-photo">
-            <div class="student-info">
-              <h3>COLE, ANNA S.</h3>
-              <p>annacole@gmail.com</p>
+    
+            <div class="profile-middle">
+                <button class="edit-information">Edit Information</button>
+                
+                <div class="expertise">
+                    
+                
+                    <h3>Subject Expertise and Ratings</h3>
+    
+                    <div class="subject">
+                        <div class="subject-info">
+                            <span>English</span> - <span class="subject-rate">P500/hour</span>
+                        </div>
+                        <div class="progress">
+                            <div class="fill" style="width: 100%;"></div>
+                        </div>
+                    </div>
+    
+                    <div class="subject">
+                        <div class="subject-info">
+                            <span>Mathematics</span> - <span class="subject-rate">P600/hour</span>
+                        </div>
+                        <div class="progress">
+                            <div class="fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+    
+                    <div class="subject">
+                        <div class="subject-info">
+                            <span>Mother Tongue</span> - <span class="subject-rate">P650/hour</span>
+                        </div>
+                        <div class="progress">
+                            <div class="fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="feedback">
+                    <h3>Feedbacks</h3>
+                    <p><strong>Raiza Mae</strong> ★★★★★</p>
+                    <p>She really able to teach my son well</p>
+                    <p><strong>Account Name</strong> ★★★★☆</p>
+                    <p>Comment</p>
+                </div>
             </div>
-            <button class="view-btn">VIEW STUDENT</button>
-          </div>
+    
+            <div class="profile-right">
+                <button class="edit-information">Edit Information</button>
+                <div class="profile-image">
+                    <img src="{% static 'images/arp.jpg' %}" alt="Tutor Profile" />
+                </div>
+                <p><strong>Name:</strong> Arp-J Villares</p>
+                <p><strong>Email:</strong> arpj@gmail.com</p>
+            </div>
         </div>
-
-      </div>
     </div>
-  </main>
 
-  <script src="{% static 'js/hamburger.js' %}"></script>
-</body>
+
+    <script src="{% static 'js/hamburger.js' %}"></script>
+    
+  </body>
 </html>
