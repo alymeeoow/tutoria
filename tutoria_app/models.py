@@ -3,29 +3,30 @@ from django.db import models
 
 class UserProfile(AbstractUser):
     middle_name = models.CharField(max_length=150, blank=True, null=True)
-    address = models.TextField()
+    address = models.TextField(blank=True, null=True)  
     gender = models.CharField(
         max_length=10,
         choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')],
-        default='male'
+        default='male',
+        blank=True, 
+        null=True  
     )
     role = models.CharField(
         max_length=10,
         choices=[('parent', 'Parent/Guardian'), ('tutor', 'Tutor')],
-        default='parent'
+        default='parent',
+        blank=True, 
+        null=True  
     )
 
- 
     groups = models.ManyToManyField(
-        "auth.Group",
-        related_name="user_profiles", 
+        "auth.Group",  
         blank=True
     )
     user_permissions = models.ManyToManyField(
-        "auth.Permission",
-        related_name="user_profiles",  
+        "auth.Permission",  
         blank=True
     )
 
     def __str__(self):
-        return self.username  
+        return self.username

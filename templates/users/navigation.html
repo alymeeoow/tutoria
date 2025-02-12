@@ -13,6 +13,7 @@
     </a>
     </div>
     <nav class="nav">
+        <a href="{% url 'tutoria' %}" class="{% if request.resolver_match.url_name == 'tutoria' %}active{% endif %}">Home</a>
         <a href="{% url 'find_tutor' %}" class="{% if request.resolver_match.url_name == 'find_tutor' %}active{% endif %}">Find a Tutor</a>
         <a href="" class="{% if request.resolver_match.url_name == 'become_tutor' %}active{% endif %}">Become a Tutor</a>
         <a href="{% url 'subjects' %}" class="{% if request.resolver_match.url_name == 'subjects' %}active{% endif %}">Subjects</a>
@@ -52,7 +53,7 @@
             <div class="dropdown-menu" id="dropdownMenuNav">
                 <a href="{% url 'profile' %}">Profile</a>
                 <a href="">Settings</a>
-                <a class="logout" style=" border-bottom: 1px solid #ddd;" href="">Log out</a>
+                <a href="{% url 'logout' %}" class="logout" style=" border-bottom: 1px solid #ddd;" href="">Log out</a>
             </div>
         </div>
     </nav>
@@ -104,7 +105,7 @@
             <div class="dropdown-menu" id="dropdownMenu">
                 <a href="{% url 'profile' %}">Profile</a>
                 <a href="">Settings</a>
-                <a class="logout" style=" border-bottom: 1px solid #ddd;" href="">Log out</a>
+                <a href="{% url 'logout' %}" class="logout" style=" border-bottom: 1px solid #ddd;" href="">Log out</a>
             </div>
         </div>
     </div>

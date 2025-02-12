@@ -118,6 +118,7 @@ header {
 
 .intro h1 {
     font-family: 'TT Bluescreens', sans-serif;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5); 
     font-weight: bold; 
     font-style: normal;
     font-size: 72px;

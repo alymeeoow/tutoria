@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 from .forms import SignupForm
 
+from tutoria_app.models import UserProfile
 
 
 
@@ -47,9 +49,46 @@ def signup(request):
 
 
 
-def signin (request):
 
-    return render (request,'users/login.html')
+def signin(request):
+    if request.method == "POST":
+        username_or_email = request.POST.get('email')  
+        password = request.POST.get('password')
+
+      
+        if '@' in username_or_email:
+            try:
+                user = UserProfile.objects.get(email=username_or_email)
+                username_or_email = user.username 
+            except UserProfile.DoesNotExist:
+                user = None
+        else:
+            user = None
+
+      
+        user = authenticate(request, username=username_or_email, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('tutoria')  
+        else:
+            return render(request, 'users/login.html', {
+                'error': True,
+                'error_title': "Login Failed!",
+                'error_message': "Invalid email/username or password. Please try again."
+            })
+
+    return render(request, 'users/login.html')
+
+
+
+def logout_function(request):
+    logout(request)
+    return redirect('signin')  
+
+def forgot (request):
+
+    return render (request,'users/forgot.html')
 
 
 def find_tutor (request):

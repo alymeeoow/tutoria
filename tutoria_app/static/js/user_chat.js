@@ -78,3 +78,29 @@ function triggerFileUpload() {
     chatMessages.scrollTop = chatMessages.scrollHeight; 
   }
   
+
+  window.onload = function() {
+    var messageBox = document.querySelector(".chat-input"); 
+    if (messageBox) {
+        messageBox.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+};
+
+
+document.querySelectorAll('.tab-link').forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+
+ 
+    document.querySelectorAll('.tab-link').forEach(tab => tab.classList.remove('active'));
+  
+    this.classList.add('active');
+
+
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+ 
+    const targetContentId = this.id.replace('-tab', '-content');
+    document.getElementById(targetContentId).classList.add('active');
+  });
+});         

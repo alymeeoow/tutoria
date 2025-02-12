@@ -106,12 +106,15 @@ header {
 .intro h1 {
     font-family: 'TT Bluescreens', sans-serif;
     font-weight: bold;
+  
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5); 
     font-size: 72px;
     color: #d269e6;
     text-transform: uppercase;
 }
 
 .intro p {
+    
     font-size: 20px;
     line-height: 1.8;
     color: #555;
