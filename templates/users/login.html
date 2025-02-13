@@ -1,83 +1,72 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Tutoria</title>
-  <link rel="stylesheet" href="{% static 'css/signin.css' %}">
-  <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}" />
-
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Tutoria</title>
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/owl.png' %}" />
+  </head>
+  <body>
     {% include 'users/header.html' %}
 
-<main class="create-account">
-  <div class="signup-container">
-    <div class="signup-welcome">
-      <h2>Welcome back to <span class="brand-name">Tutoria</span></h2>
-      <p>Log in to continue and connect with the perfect tutor for your learning goals.</p>
-      <img src="{% static 'images/owl.png' %}" alt="Welcome to Tutoria" class="owl-icon">
-    </div>
-    <div class="signup-form">
-      <h3>Log in</h3>
-      <p>Access your account by entering your credentials below.</p>
-      <form action="{% url 'signin' %}" method="post">
-        {% csrf_token %}
-        <label for="email">Email or Username</label>
-        <input type="text" id="email" name="email"  required>
-    
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    
-        <button type="submit" class="btn-primary">LOGIN</button>
-    </form>
-    
-      <p class="forgot"><a href="{% url 'forgot' %}">Forgot Password?</a></p>
-    </div>
-  </div>
-</main>
+    <main class="create-account">
+      <div class="signup-container">
+        <div class="signup-welcome">
+          <h2>Welcome back to <span class="brand-name">Tutoria</span></h2>
+          <p>
+            Log in to continue and connect with the perfect tutor for your
+            learning goals.
+          </p>
+          <img
+            src="{% static 'images/owl.png' %}"
+            alt="Welcome to Tutoria"
+            class="owl-icon"
+          />
+        </div>
+        <div class="signup-form">
+          <h3>Log in</h3>
+          <p>Access your account by entering your credentials below.</p>
 
-{% include 'modal/error.html' %}
+          {% if error %}
+          <div class="error-messages">
+            <h4 class="error-title">{{ error_title }}</h4>
+            <p class="error-text">{{ error_message }}</p>
+          </div>
+          {% endif %}
 
-<script src="{% static 'js/index.js' %}"></script>
+          <form action="{% url 'signin' %}" method="post">
+            {% csrf_token %}
+            <label for="email">Email or Username</label>
+            <input type="text" id="email" name="email" required />
 
-<script>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
 
-function signin(){
+            <button type="submit" class="btn-primary">LOGIN</button>
+          </form>
 
-window.location.href = "{% url 'signin' %}"
+          <div class="login-links">
+            <span class="forgot"
+              ><a href="{% url 'forgot' %}">Forgot Password?</a></span
+            >
+            <span class="signup"><a href="{% url 'signup' %}">Sign-up</a></span>
+          </div>
+        </div>
+      </div>
+    </main>
 
+    <script src="{% static 'js/index.js' %}"></script>
 
-}
+    <script>
+      function signin() {
+        window.location.href = "{% url 'signin' %}";
+      }
 
-
-function signup(){
-
-window.location.href = "{% url 'signup' %}"
-
-
-}
-
-
-
-   
-   
-
-</script>
-
-{% if success %}
-<script>
-  showModal("{{ modal_title }}", "{{ modal_message }}");
-</script>
-{% endif %}
-
-{% if error %}
-<script>
-  showErrorModal("{{ error_title }}", "{{ error_message }}");
-</script>
-{% endif %}
-</body>
+      function signup() {
+        window.location.href = "{% url 'signup' %}";
+      }
+    </script>
+  </body>
 </html>

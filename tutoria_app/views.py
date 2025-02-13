@@ -74,7 +74,6 @@ def signin(request):
         else:
             return render(request, 'users/login.html', {
                 'error': True,
-                'error_title': "Login Failed!",
                 'error_message': "Invalid email/username or password. Please try again."
             })
 
